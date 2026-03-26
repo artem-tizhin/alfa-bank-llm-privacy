@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+
+# Env (секреты)
+.env
+
+# Модель (ВАЖНО)
+artifacts/ner_model/
+
+data/raw/

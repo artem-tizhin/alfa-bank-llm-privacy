@@ -1,0 +1,5 @@
+Этот файл замените на папку ner_model. 
+В этой папке будет располагаться дообученная модель под нашу задачу. 
+Мою модель можно скачать по ссылке:
+https://drive.google.com/file/d/1Tn0k93Luov74cOAqVxSzNftzlYfR45o6/view?usp=sharing
+
