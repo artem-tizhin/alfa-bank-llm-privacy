@@ -88,15 +88,31 @@ https://drive.google.com/file/d/1Tn0k93Luov74cOAqVxSzNftzlYfR45o6/view?usp=shari
 
 ------------------------------------------------------------------------
 
-##  Структура
+##  Структура проекта
 
-    app.py — вход
-    api.py — endpoints
-    ner.py — модель
-    masking.py — маскирование
-    pipeline.py — логика
-    llm.py — Groq
-    config.py — настройки
+```text
+ner_service/
+├── README.md                # описание проекта и инструкция по запуску
+├── .gitignore              # игнорируемые файлы для git
+├── requirements.txt        # зависимости проекта
+├── .env.example            # пример конфигурации окружения
+├── app.py                  # точка входа FastAPI (создание приложения)
+│
+├── artifacts/
+│   └── ner_model/          # директория с обученной NER моделью (HF формат)
+│
+├── src/
+│   └── ner_service/
+│       ├── __init__.py     # инициализация пакета
+│       ├── api.py          # HTTP эндпоинты (/health, /mask, /process)
+│       ├── config.py       # загрузка настроек из .env
+│       ├── llm.py          # клиент для работы с Groq (LLM)
+│       ├── ner.py          # NER сервис (HF модель или regex fallback)
+│       ├── masking.py      # маскирование и демаскирование текста
+│       ├── pipeline.py     # основной пайплайн (NER → mask → LLM → unmask)
+│       └── schemas.py      # Pydantic схемы запросов/ответов
+│
+└── tests/                  # тесты (если добавлены)
 
 ------------------------------------------------------------------------
 
